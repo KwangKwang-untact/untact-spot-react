@@ -37,3 +37,17 @@ body {
 		max-width: 413px;
 	}
 }
+
+
+/* App CSS */
+.app-btn {
+	padding: 12px 14px;
+	border: none;
+  border-radius: 7px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.13);
+  background-color: #ffffff;
+}
+.app-btn:focus { outline: 0; }
+.app-btn.active { background-color: var(--main-color); color: #ffffff; }
+.app-btn.fit { width: fit-content; }
+.app-btn.fill { width: -webkit-fill-available; }
