@@ -51,3 +51,7 @@ body {
 .app-btn.active { background-color: var(--main-color); color: #ffffff; }
 .app-btn.fit { width: fit-content; }
 .app-btn.fill { width: -webkit-fill-available; }
+.app-btn.outline {
+	color: var(--main-color);
+	border: 1px solid var(--main-color);
+}
