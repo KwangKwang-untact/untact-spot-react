@@ -1,0 +1,19 @@
+.filter-top {
+	padding: 8px 0;
+	text-align: center;
+	background-color: var(--main-color);
+}
+.filter-top span {
+	color: #ffffff;
+}
+
+.filter-section {
+	margin-top: 42px;
+	margin-bottom: 21px;
+	text-align: center;
+	justify-content: center;
+}
+.filter-section .title {
+	font-family: 'Nanum acEB';
+	font-size: 18px;
+}

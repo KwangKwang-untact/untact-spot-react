@@ -1,4 +1,6 @@
 @import './app.css';
 @import './fonts.css';
 @import './layout.css';
-@import './custom.css';
+
+@import './pages/main.css';
+@import './pages/search.css';

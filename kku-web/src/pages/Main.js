@@ -1,11 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import { CSSTransition } from 'react-transition-group'
 import { Search } from 'react-feather'
 
+import SplashScreen from '../component/screen/splash'
+
 import LocationIcon from '../assets/icons/location.svg'
 import MainBackground from '../assets/images/main.svg'
-
-import SplashScreen from '../component/screen/splash'
+import Img1 from '../assets/images/img1.jpg'
+import Img2 from '../assets/images/img2.jpg'
+import Img3 from '../assets/images/img3.jpg'
 
 export default class Main extends React.Component {
 	constructor(props) {
@@ -48,12 +53,14 @@ export default class Main extends React.Component {
 						답답하고 우울하다면?<br/>
 						마주치지 말고 색다른 장소로 떠나봐요!
 					</p>
-					<div className='search-box'>
-						<input type='text' className='search-input' placeholder='언택트 스팟 검색하기'/>
+					<Link to='/filter' className='search-box'>
+						<button className='search-input'>
+							언택트 스팟 검색하기
+						</button>
 						<button class='search-btn'>
 							<Search size={18} color='#ffffff'/>
 						</button>
-					</div>
+					</Link>
 				</div>
 			</div>
 
@@ -62,16 +69,39 @@ export default class Main extends React.Component {
 					<span className='main-color'>1시간 </span>
 					안에 갈 수 있는 SPOT
 				</p>
-				<div className='scroll-box'>
-					<div className='item'>
-						
-					</div>
+				<div className='x-slider-box'>
+					<Link to='/view/1' className='item'>
+						<img src={Img1}/>
+						<span>서울 강서 한강공원</span>
+					</Link>
+					<Link to='/view/1' className='item'>
+						<img src={Img2}/>
+						<span>서울 강서 한강공원</span>
+					</Link>
+					<Link to='/view/1' className='item'>
+						<img src={Img3}/>
+						<span>서울 강서 한강공원</span>
+					</Link>
 				</div>
 
 				<p className='section-title'>
 					<span className='main-color'>2시간 </span>
 					안에 갈 수 있는 SPOT
 				</p>
+				<div className='x-slider-box'>
+					<Link to='/view/1' className='item'>
+						<img src={Img1}/>
+						<span>서울 강서 한강공원</span>
+					</Link>
+					<Link to='/view/1' className='item'>
+						<img src={Img2}/>
+						<span>서울 강서 한강공원</span>
+					</Link>
+					<Link to='/view/1' className='item'>
+						<img src={Img3}/>
+						<span>서울 강서 한강공원</span>
+					</Link>
+				</div>
 			</div>
 		</>)
 	}
