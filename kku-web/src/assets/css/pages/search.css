@@ -17,3 +17,97 @@
 	font-family: 'Nanum acEB';
 	font-size: 18px;
 }
+
+
+/* View Page */
+.common-info {
+	padding: 12px 0;
+}
+.common-info .summary {
+	display: flex;
+	align-items: center;
+	margin-bottom: 24px;
+}
+.common-info .summary .name {
+	font-family: 'Nanum acEB';
+	font-size: 22px;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+.common-info .summary .dis {
+	font-size: 12px;
+	color: #a7a7a7;
+	margin-right: 6px;
+	align-self: flex-end;
+}
+.common-info .summary .time {
+	font-size: 12px;
+	color: var(--main-color);
+	margin-right: 4px;
+	align-self: flex-end;
+}
+
+.common-info .score .title {
+	text-align: center;
+	font-family: 'Nanum acEB';
+	font-size: 18px;
+	margin-bottom: 0px;
+}
+.common-info .score .title .main-color {
+	font-family: 'Nanum acEB';
+}
+.common-info .score .sub {
+	text-align: center;
+	font-family: 'Nanum acR';
+	font-size: 12px;
+	color: #797979;
+}
+
+
+.detail-info {}
+.detail-info .title {
+	font-family: 'Nanum acEB';
+	font-size: 18px;
+	margin-bottom: 4px;
+}
+.detail-info .text {
+	font-family: 'Nanum acR';
+	font-size: 12px;
+	margin-bottom: 4px;
+}
+
+.detail-info .info-list {
+	list-style: none;
+	padding: 0; margin: 8px 0;
+	width: 100%;
+}
+.detail-info .info-list li {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 6px;
+}
+.detail-info .info-list li span:first-child {
+	font-family: 'Nanum acEB';
+	font-size: 12px;
+	margin-right: 4px;
+}
+.detail-info .info-list li span:last-child {
+	font-family: 'Nanum acR';
+	font-size: 12px;
+	margin-right: 4px;
+}
+
+
+.btn-path {
+	position: fixed;
+	bottom: 0;
+
+	padding: 18px 0;
+	border: none;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: var(--main-color);
+}
+.btn-path svg {
+	margin-left: 4px;
+}

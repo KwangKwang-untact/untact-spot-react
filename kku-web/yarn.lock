@@ -9312,6 +9312,11 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
+"react-simple-image-slider@^2.0.1":
+  "integrity" "sha512-qul6jPi2k5j//N/g5CnQJcVqrfIFERe5bUC1aFP4vG3lpxUsNU/PdpUfV2twskkcWwedQWEg3gUFpmtoJ9WDgQ=="
+  "resolved" "https://registry.npmjs.org/react-simple-image-slider/-/react-simple-image-slider-2.0.1.tgz"
+  "version" "2.0.1"
+
 "react-transition-group@^4.4.1":
   "integrity" "sha512-Djqr7OQ2aPUiYurhPalTrVy9ddmFCCzwhqQmtN+J3+3DzLO209Fdr70QrN8Z3DsglWql6iY1lDWAfpFiBtuKGw=="
   "resolved" "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.1.tgz"
