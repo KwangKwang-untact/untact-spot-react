@@ -3,10 +3,6 @@
   src: url('../fonts/Mont-HeavyDEMO.otf');
 }
 @font-face {
-	font-family: 'Nanum acL';
-  src: url('../fonts/NanumSquare_acL.ttf');
-}
-@font-face {
 	font-family: 'Nanum acR';
   src: url('../fonts/NanumSquare_acR.ttf');
 }
@@ -14,8 +10,12 @@
 	font-family: 'Nanum acB';
   src: url('../fonts/NanumSquare_acB.ttf');
 }
+@font-face {
+	font-family: 'Nanum acEB';
+  src: url('../fonts/NanumSquare_acEB.ttf');
+}
 
 * {
-	font-family: 'Nanum acR';
+	font-family: 'Nanum acB';
 	color: var(--black);
 }

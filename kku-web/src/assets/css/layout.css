@@ -9,6 +9,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	z-index: 99;
 }
 .splash-screen img {
 	margin-bottom: 18px;
@@ -43,7 +44,7 @@
 
 /* Layout */
 .navbar {
-	padding: 1rem 1rem !important;
+	padding: .75rem 1rem !important;
 	justify-content: center !important;
 }
 .navbar-brand {
