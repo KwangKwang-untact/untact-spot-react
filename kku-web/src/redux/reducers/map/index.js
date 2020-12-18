@@ -1,6 +1,4 @@
 const initialState = {
-	user: {},
-
 	// Data List
   data: [],
   count: 0,
@@ -10,7 +8,10 @@ const initialState = {
 }
 
 const MapReducer = (state = initialState, action) => {
-  switch (action.type) {    
+  switch (action.type) {
+		case 'SET_LOADING':
+			return {...state, loading: true}
+
     default:
       return state
   }

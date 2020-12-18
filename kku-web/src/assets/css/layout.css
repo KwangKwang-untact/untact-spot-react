@@ -11,6 +11,9 @@
 	align-items: center;
 	z-index: 99;
 }
+.splash-screen .container {
+	height: 340px;
+}
 .splash-screen img {
 	margin-bottom: 18px;
 }

@@ -1,4 +1,6 @@
 :root {
+	--app-max-size: 640px;
+
 	--main-bg: #fafafa;
 	--main-color: #3bc1c4;
 	--black: #3f3d3f;

@@ -2,6 +2,8 @@ import React from 'react'
 import ImageSlider from 'react-simple-image-slider'
 import { Search } from 'react-feather'
 
+import UntactBar from '../component/bar/untact'
+
 import PinIcon from '../assets/icons/pin.svg'
 
 import Img1 from '../assets/images/img1.jpg'
@@ -46,9 +48,11 @@ export default class View extends React.Component {
 							<span className='main-color'>UNTACT </span>
 							점수
 						</p>
-						<p className='sub'>
+						<p className='sub mb-0'>
 							1시간 동안 <span className='point'>15명</span>이 조회했어요!
 						</p>
+
+						<UntactBar score={70}/>
 					</div>
 				</div>
 
@@ -82,7 +86,7 @@ export default class View extends React.Component {
 				</div>
 			</div>
 
-			<button className='btn-block btn-path'>
+			<button className='btn-path'>
 				길 찾기 
 				<Search width={20} color={'#ffffff'}/>
 			</button>

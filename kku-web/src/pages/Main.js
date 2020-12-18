@@ -12,17 +12,16 @@ import Img1 from '../assets/images/img1.jpg'
 import Img2 from '../assets/images/img2.jpg'
 import Img3 from '../assets/images/img3.jpg'
 
-export default class Main extends React.Component {
+import { connect } from 'react-redux'
+import { SetLoading } from '../redux/actions/user'
+
+class Main extends React.Component {
 	constructor(props) {
 		super(props)
-
-		this.state = {
-			loading: false,
-		}
 	}
 
 	componentDidMount() {
-		setTimeout(() => this.setState({ loading: true }), 300)
+		if(!this.props.loading) setTimeout(() => this.props.SetLoading(), 300)
 		
 		navigator.geolocation.getCurrentPosition(function(position) {
 			console.log("Latitude is :", position.coords.latitude)
@@ -31,7 +30,7 @@ export default class Main extends React.Component {
 	}
 
 	render() {
-		const { loading } = this.state
+		const { loading } = this.props
 
 		return (<>
 			<CSSTransition in={!loading} timeout={1200} unmountOnExit classNames='splash-screen'>
@@ -59,6 +58,11 @@ export default class Main extends React.Component {
 						</button>
 						<button class='search-btn'>
 							<Search size={18} color='#ffffff'/>
+						</button>
+					</Link>
+					<Link to='/map' className='map-box text-right mt-2'>
+						<button className='btn-point'>
+							지도 보기
 						</button>
 					</Link>
 				</div>
@@ -106,3 +110,14 @@ export default class Main extends React.Component {
 		</>)
 	}
 }
+
+const mapStateToProps = state => {
+	return {
+		info: state.user.info,
+		loading: state.user.loading,
+  }
+}
+
+export default connect(mapStateToProps, {
+	SetLoading
+})(Main)
