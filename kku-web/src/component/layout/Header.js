@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 export default class Header extends React.Component {
 	render() {
 		return (
-			<nav className='navbar navbar-light'>
+			<nav className='navbar'>
 				<Link to='/' className='navbar-brand'>
-					Header
+					UNTACT SPOT
 				</Link>
 			</nav>
 		)

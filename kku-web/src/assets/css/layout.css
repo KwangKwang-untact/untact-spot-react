@@ -1,0 +1,56 @@
+/* Splash Screen */
+.splash-screen {
+	position: absolute;
+	top: 0; bottom: 0;
+	width: 100%; height: 100%;
+	background-color: var(--main-bg);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.splash-screen img {
+	margin-bottom: 18px;
+}
+.splash-screen .title {
+	font-family: 'Mont Heavy';
+	font-size: 38px;
+	color: var(--main-color);
+	margin-bottom: 0;
+}
+.splash-screen .text {
+	font-family: 'Nanum acB';
+	font-size: 14px;
+	line-height: 22px;
+}
+/* Animation */
+.splash-screen-enter {
+  opacity: 0;
+}
+.splash-screen-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.splash-screen-exit {
+  opacity: 1;
+}
+.splash-screen-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+
+/* Layout */
+.navbar {
+	padding: 1rem 1rem !important;
+	justify-content: center !important;
+}
+.navbar-brand {
+	font-family: 'Mont Heavy';
+	font-size: 28px;
+	line-height: 38px;
+	color: var(--main-color) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
