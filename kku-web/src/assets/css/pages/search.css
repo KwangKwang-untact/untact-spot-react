@@ -23,6 +23,21 @@
 	color: #939393;
 }
 
+.input-range__track--active {
+	background: var(--main-color);
+}
+.input-range__slider {
+	background: #ffffff;
+	border-color: rgba(63, 61, 63, 0.3);
+	width: 26px; height: 26px;
+	margin-left: -15px; margin-top: -15px;
+}
+.filter-time {
+	font-size: 16px;
+	color: var(--main-color);
+	margin-bottom: 0;
+}
+
 .btn-filter-search {
 	width: 100%;
 	padding: 14px 0;
