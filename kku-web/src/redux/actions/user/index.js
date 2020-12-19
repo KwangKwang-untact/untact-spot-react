@@ -4,10 +4,10 @@ export const SetLoading = () => {
 	return dispatch => dispatch({ type: 'SET_LOADING' })
 }
 
-export const getData = params => {
+export const getGeometry = params => {
   return async dispatch => {
-    await axios.get('/url', { params }).then(response => {
-      dispatch({ type: 'ACTION_TYPE', payload: response.data })
+    axios.get('/geometry', { params }).then(response => {
+      dispatch({ type: 'SET_POSITION', payload: { address: response.data, ...params } })
     })
   }
 }

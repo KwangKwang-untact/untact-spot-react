@@ -1,19 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import InputRange from 'react-input-range'
 
+import InputRange from 'react-input-range'
 import 'react-input-range/lib/css/index.css'
 
-export default class Filter extends React.Component {
+import { connect } from 'react-redux'
+import { setFilter } from '../redux/actions/data'
+
+class Filter extends React.Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-			car: null,
+			loading: false,
+			car: false,
 			time: 0,
-			member: 1,
 			theme: [],
 		}
+	}
+
+	static getDerivedStateFromProps(props, state) {
+		if(!state.loading) return {...props.filter, loading: true}
+		
+		return null
 	}
 
 	toggleTheme(name) {
@@ -23,9 +32,14 @@ export default class Filter extends React.Component {
 		index != -1 ? theme.splice(index, 1) : theme.push(name)
 		this.setState({ theme })
 	}
-	
+
+	update() {
+		const { car, time, theme } = this.state
+		this.props.setFilter({ car, time, theme })
+	}
+
 	render() {
-		const { car, time, member, theme } = this.state
+		const { car, time, theme } = this.state
 		
 		let theme_list = ['글램핑', '일반 야영장', '카라반', '자동차 여양장', '관광지', '차박']
 
@@ -69,7 +83,7 @@ export default class Filter extends React.Component {
 					</div>
 				</section>
 
-				<Link to='/search'>
+				<Link to='/search' onClick={() => this.update()}>
 					<butotn className='btn-block btn-filter-search'>
 						검색하기
 					</butotn>
@@ -78,3 +92,13 @@ export default class Filter extends React.Component {
 		</>)
 	}
 }
+
+const mapStateToProps = state => {
+	return {
+		filter: state.data.filter,
+  }
+}
+
+export default connect(mapStateToProps, {
+	setFilter
+})(Filter)

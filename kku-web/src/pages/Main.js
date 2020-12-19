@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { confirmAlert } from 'react-confirm-alert'
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 import { CSSTransition } from 'react-transition-group'
 import { Search } from 'react-feather'
@@ -13,24 +15,46 @@ import Img2 from '../assets/images/img2.jpg'
 import Img3 from '../assets/images/img3.jpg'
 
 import { connect } from 'react-redux'
-import { SetLoading } from '../redux/actions/user'
+import { getRecommend } from '../redux/actions/data'
+import { SetLoading, getGeometry } from '../redux/actions/user'
 
 class Main extends React.Component {
 	constructor(props) {
 		super(props)
+
+		this.state = {
+			lat: null,
+			long: null,
+		}
 	}
 
 	componentDidMount() {
 		if(!this.props.loading) setTimeout(() => this.props.SetLoading(), 300)
 		
-		navigator.geolocation.getCurrentPosition(function(position) {
-			console.log("Latitude is :", position.coords.latitude)
-			console.log("Longitude is :", position.coords.longitude)
-		})
+		navigator.geolocation.getCurrentPosition(
+			position => this.props.getGeometry({
+				latitude: position.coords.latitude,
+				longitude: position.coords.longitude }),
+			err => confirmAlert({
+				title: '위치',
+				message: '위치 권한이 없을 경우 서비스 이용에 어려움이 있을 수 있습니다',
+				buttons: [
+					{ label: '예' },
+				]
+			})
+		)
+	}
+
+	static getDerivedStateFromProps(props, state) {
+		if(props.lat != state.lat || props.long != state.long) {
+			console.log('Diffrent')
+		}
+
+		return {...props}
 	}
 
 	render() {
-		const { loading } = this.props
+		const { address, loading } = this.props
 
 		return (<>
 			<CSSTransition in={!loading} timeout={1200} unmountOnExit classNames='splash-screen'>
@@ -42,7 +66,7 @@ class Main extends React.Component {
 					<img src={LocationIcon}/>
 					<span>나의 위치</span>
 				</div>
-				<p className='current-locaiton'>서울 노원구 광운로 21</p>
+				<p className='current-locaiton'>{address}</p>
 			</div>
 
 			<div className='main-banner'>
@@ -113,11 +137,13 @@ class Main extends React.Component {
 
 const mapStateToProps = state => {
 	return {
-		info: state.user.info,
+		lat: state.user.lat,
+		long: state.user.long,
+		address: state.user.address,
 		loading: state.user.loading,
   }
 }
 
 export default connect(mapStateToProps, {
-	SetLoading
+	SetLoading, getGeometry, getRecommend
 })(Main)

@@ -21,7 +21,7 @@ export default class Map extends React.Component {
 	render() {
 		return (<div className='position-relative' width='100%' style={{ height: 'calc(100vh - 60px)' }}>
 			<div id='kakaomap' style={{ width: '100%', height: '100%' }}></div>
-			<div className='map-box d-flex flex-column justify-content-between'>
+			<div className='.map-overlay d-flex flex-column justify-content-between'>
 				<div className='map-search'>
 					
 				</div>
